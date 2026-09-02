@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Full Counter Example</title>
+  <style>
+    /* Adding a little spacing so the buttons look nice */
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. The Buttons -->
+  <div>
+    <button id="btnDecrease">Decrease (-1)</button>
+    <button id="btnReset">Reset (0)</button>
+    <button id="btnIncrease">Increase (+1)</button>
+  </div>
+
+  <!-- 2. The Display -->
+  <h2>Count: <span id="displayArea">0</span></h2>
+
+  <!-- 3. The JavaScript -->
+  <script>
+    // Set the initial count
+    let count = 0;
+
+    // Grab the HTML elements we need to interact with
+    const displayArea = document.getElementById("displayArea");
+    const btnIncrease = document.getElementById("btnIncrease");
+    const btnDecrease = document.getElementById("btnDecrease");
+    const btnReset    = document.getElementById("btnReset");
+
+    // A helper function to update the screen so we don't repeat code
+    function updateScreen() {
+      displayArea.innerText = count;
+    }
+
+    // Increase Action
+    btnIncrease.addEventListener("click", function() {
+      count+=1; 
+      updateScreen();
+    });
+
+    // Decrease Action
+    btnDecrease.addEventListener("click", function() {
+      count-=1; 
+      updateScreen();
+    });
+
+    // Reset Action
+    btnReset.addEventListener("click", function() {
+      count = 0; 
+      updateScreen();
+    });
+  </script>
+
+</body>
+</html>
